@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Connective signature</title>
+ <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<section id="container">
+  <div class="main-container"> 
+    
+    <!--start header-block-->
+    
+    <header class="profile-head">
+      <div class="main-container2">
+      <div class="profile-snaps">
+        <img src="<%= @user.profile_picture %>"/>
+
+</div>
+  </div>
+    </header>
+    
+    <!--End header-block--> 
+    
+    <!--start middle-block-->
+      <section id="middle-profile">
+     <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+       <%= yield %>
+    </section>
+
+    
+    <!--End middle-block--> 
+    
+  </div>
+  
+  <!--start-footer-block-->
+  
+  <footer class="profile-footer">
+    <p>Powered by <strong>Connective Contacts </strong></p>
+  </footer>
+</section>
+</body>
+</html>

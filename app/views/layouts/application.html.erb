@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Connective signature</title>
+ <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<section id="container">
+  <div class="main-container">
+    <header>
+      <div class="main-container2">
+        <figure class="logo">
+          <a href="/">
+<%= image_tag "logo.png" %>
+</a>
+
+        </figure>
+
+<% if user_signed_in? %>
+Logged In <%= current_user.first_name %>
+<%= link_to "Sign out", destroy_user_session_path,:method => :delete %>
+<% else %>
+<%#= link_to "Sign up", new_user_registration_path, class: "sign-menu" %>
+<%= link_to "Sign in", new_user_session_path, class: "sign-menu"%>
+<%#= link_to "Sign in with Linkedin",user_omniauth_authorize_path(:linkedin) %>
+<% end %>
+
+
+         </div>
+    </header>
+    <section id="middle">
+     <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+       <%= yield %>
+    </section>
+  </div>
+  <footer>
+    <div class="primary-footer"> <span>Doenload our contact management app</span> <a  href="" class="download-app">app</a> </div>
+  </footer>
+</section>
+</body>
+</html>

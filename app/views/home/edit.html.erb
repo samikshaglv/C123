@@ -1,0 +1,93 @@
+
+
+
+      <div class="contact-block-forms">
+        <div class="clint-snaps">
+          <img src="<%= @user.profile_picture %>"/>
+
+
+</div>
+        <div class="contact-form">
+           <%= form_for @user, :html => { :class => 'form-horizontal' } do |f| %>
+
+
+            <ul>
+
+              <li>
+                <label>First Name:</label>
+<%= f.text_field :first_name, autofocus: true %>
+              </li>
+              <li>
+                <label>Last Name:</label>
+<%= f.text_field :last_name, autofocus: true %>
+              </li>
+              <li>
+                <label>Tital:</label>
+<%= f.text_field :title, autofocus: true %>
+              </li>
+              <li>
+                <label>Company:</label>
+<%= f.text_field :company, autofocus: true %>
+              </li>
+              <li>
+                <label>Office Phone:</label>
+<%= f.text_field :office_phone, autofocus: true %>
+              </li>
+              <li>
+                <label>Mobile Phone:</label>
+<%= f.text_field :mobile_phone, autofocus: true %>
+              </li>
+              <li>
+                <label>Email:</label>
+                <%= f.email_field :email, autofocus: true %>
+              </li>
+              <li>
+                <label>Work Address</label>
+              </li>
+               <li>
+                <label  class="workaddress-1">Street:</label>
+<%= f.text_field :work_address, autofocus: true %>
+              </li>
+              <li>
+                <label  class="workaddress-1">City:</label>
+<%= f.text_field :city, autofocus: true %>
+              </li>
+              <li>
+                <label  class="workaddress-1">State:</label>
+<%= f.text_field :state, autofocus: true %>
+              </li>
+                <li>
+                <label  class="workaddress-1">Country:</label>
+<%= f.text_field :country, autofocus: true %>
+              </li>
+              <li>
+                <label  class="workaddress-1">Zip:</label>
+<%= f.text_field :zip, autofocus: true %>
+              </li>
+              <li>
+                <label>Website:</label>
+<%= f.text_field :website, autofocus: true %>
+              </li>
+              <li>
+                <label>Linkedin Profile URL</label>
+<%= f.text_field :linkedin_profile_url, autofocus: true %>
+              </li>
+              <li>
+                <%= f.submit "Save and Preview", :class=>"save-btns" %>
+              </li>
+              <% end %>
+
+            </ul>
+        </div>
+      </div>
+      <div class="your-urls">
+        <div class="enter-urlname"> Your Hyper Link is: <span>
+        <% if current_user.secret_token.present? %>
+         <a href="http://<%= request.env['HTTP_HOST'] +'/'+ current_user.secret_token%>" target="_blank">http://<%= request.env['HTTP_HOST'] +'/'+ current_user.secret_token%></a>
+
+<% end %>
+
+        </span></div>
+        <div class="url-icon"><a href="#">icons</a></div>
+      </div>
+    

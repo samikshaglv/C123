@@ -1,0 +1,23 @@
+<div class="main-container2">
+        <div class="mail-signature-block">
+          <figure>
+<%= image_tag "imac-snap.jpg" %>
+          
+          </figure>
+          <article>
+            <h2>Make Your email Signature dynamic!</h2>
+            <p>Create Your Own customized hyperlink and add it do your email signature so people can easily save your contact details</p>
+          </article>
+        </div>
+        <div class="sign-in-btn"> 
+
+        <% if user_signed_in? %>
+
+<% else %>
+ <div class="sign-in-btn">
+<%= link_to "Sign in with Linkedin",user_omniauth_authorize_path(:linkedin) %>
+<% end %></div>
+
+</div>
+
+      </div>

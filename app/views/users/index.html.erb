@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Title</th>
+     <!--  <th>Company</th>
+      <th>Office phone</th>
+      <th>Mobile phone</th>
+      <th>Work address</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Website</th>
+      <th>Linkedin profile url</th>
+      <th>Profile picture</th>
+      <th>Tokenurl</th> -->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to user.email, user %></td>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.title %></td>
+     <!--    <td><%#= user.company %></td>
+        <td><%#= user.office_phone %></td>
+        <td><%#= user.mobile_phone %></td>
+        <td><%#= user.work_address %></td>
+        <td><%#= user.street %></td>
+        <td><%#= user.city %></td>
+        <td><%#= user.state %></td>
+        <td><%#= user.zip %></td>
+        <td><%#= user.website %></td>
+        <td><%#= user.linkedin_profile_url %></td>
+        <td><%#= user.profile_picture %></td>
+        <td><%#= user.tokenurl %></td> -->
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>
